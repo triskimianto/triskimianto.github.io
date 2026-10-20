@@ -1,0 +1,88 @@
+---
+import { 
+  IconHome, 
+  IconUser, 
+  IconBriefcase2, 
+  IconMail 
+} from '@tabler/icons-astro';
+
+const navItems = [
+    {
+        name: 'Home',
+        href: '#hero',
+        icon: IconHome
+    },
+    {
+        name: 'About',
+        href: '#about',
+        icon: IconUser
+    },
+    {
+        name: 'Projects',
+        href: '#projects',
+        icon: IconBriefcase2
+    },
+    {
+        name: 'Contact',
+        href: '#contact',
+        icon: IconMail
+    },
+]
+---
+
+<nav>
+    <ul class="flex items-center justify-between lg:justify-center lg:gap-10 text-xs sm:text-sm font-medium uppercase">
+        {navItems.map(({ name, href, icon: IconComponent }) => (
+            <li>
+                <a 
+                    href={href}
+                    class="nav-link flex flex-col lg:flex-row items-center gap-1 text-pallete-1/75 hover:text-pallete-1 transition-colors py-1 px-4 rounded-full"
+                >
+                    <IconComponent class="w-5 h-5 lg:hidden stroke-[1.8]" />
+                    <span>
+                        {name}
+                    </span>
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>
+
+<script>
+    function initActiveNav() {
+        const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+        const sections = document.querySelectorAll<HTMLElement>('section[id]'); 
+
+        if (!sections.length || !navLinks.length) return;
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -65% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+
+                    navLinks.forEach((link) => {
+                        const href = link.getAttribute('href');
+                        if (href === `#${currentId}`) {
+                            link.classList.add('bg-pallete-1/10');
+                            link.classList.add('text-pallete-1/100');
+                        } else {
+                            link.classList.remove('bg-pallete-1/10');
+                            link.classList.remove('text-pallete-1/100');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach((section) => observer.observe(section));
+    }
+
+    document.addEventListener('DOMContentLoaded', initActiveNav);
+    document.addEventListener('astro:page-load', initActiveNav);
+</script>

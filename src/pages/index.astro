@@ -1,13 +1,26 @@
 ---
 import '../styles/global.css';
 import Layout from '../layouts/PlainLayout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
-import TrLogo from '../assets/tr-logo-26.svg';
+import MainHeader from '../components/MainHeader.astro';
+import MainFooter from '../components/MainFooter.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout
-  title='Coming Soon | Tito Riskimianto'
-  description='Currently under heavy development using a modern stack.'
+  title='Tito Riskimianto'
+  description='Tito Riskimianto'
 >
-  <ComingSoon />
+  <div class="font-fira">
+    <MainHeader/>
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </main>
+    <MainFooter />
+  </div>
 </Layout>

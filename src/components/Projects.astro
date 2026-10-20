@@ -1,0 +1,36 @@
+---
+import { Picture } from "astro:assets";
+import DefaultImg from "../assets/default.webp";
+import Button from "./Button.astro";
+---
+
+<section id="projects" class="lg:scroll-mt-24">
+    <div class="bg-pallete-5 text-pallete-1/75">
+        <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:py-30">
+            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">Projects</h2>
+            <p class="mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">
+            <div class="flex flex-1 relative w-full md:w-1/2">
+                <Picture src={DefaultImg} alt={'tr'} sizes={'50vw'} class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-1 w-full md:w-1/2">
+                <div class="p-5 lg:p-10">
+                    <h3 class="text-3xl lg:text-4xl text-pallete-1 font-extrabold mb-3 uppercase">Heading</h3>
+                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul class="list-disc list-inside mb-5">
+                        <li>List 1</li>
+                        <li>List 2</li>
+                        <li>List 3</li>
+                        <li>List 4</li>
+                        <li>List 5</li>
+                    </ul>
+                    <div class="flex items-center gap-3">
+                        <Button href="#" variant="primary">View Live</Button>
+                        <Button href="#" variant="secondary">View Repository</Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

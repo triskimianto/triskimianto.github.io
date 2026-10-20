@@ -1,0 +1,29 @@
+---
+interface Props {
+    color?: 'clr1' | 'clr2' | 'clr3';
+}
+
+const { color = 'clr1' } = Astro.props;
+
+const colors = {
+    clr1: {
+        setting: 'bg-linear-to-r from-pallete-2/5 to-pallete-2/20 border-pallete-2/30 text-pallete-2'
+    },
+    clr2: {
+        setting: 'bg-linear-to-r from-pallete-1/5 to-pallete-1/20 border-pallete-1/30 text-pallete-1'
+    },
+    clr3: {
+        setting: 'bg-linear-to-r from-pallete-3/5 to-pallete-3/20 border-pallete-3/30 text-pallete-3'
+    },
+}
+
+const selectedColor = colors[color] ?? colors.clr1;
+---
+
+<div class:list={[
+    'inline-flex relative overflow-hidden rounded-full h-full border text-sm font-semibold uppercase tracking-wide',
+    selectedColor.setting,
+    'px-5 py-1'
+]}>
+    <slot />
+</div>

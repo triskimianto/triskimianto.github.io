@@ -1,0 +1,40 @@
+---
+import TrLogo from '../assets/tr-logo-26.svg';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<section id="hero" class="lg:scroll-mt-24">
+    <div class="bg-pallete-5 text-pallete-1/75">
+        <div class="container h-[calc(100vh-72px)] mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:pb-30">
+            <div class="flex flex-col gap-5 h-full md:flex-row-reverse lg:gap-10">
+                <div class="w-full md:h-full md:w-1/3">
+                    <Card color='hero1'>
+                        <div class="flex justify-center items-center md:h-full">
+                            <TrLogo class="text-pallete-5 w-26 h-26 lg:w-48 lg:h-48 xl:w-56 xl:h-56" />
+                        </div>
+                    </Card>
+                </div>
+                <div class="w-full md:h-full md:w-2/3">
+                    <Card color='hero2'>
+                        <div class="flex flex-col justify-between items-start gap-5 md:h-full">
+                            <h2 class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                            <div>
+                                <h1 class="text-4xl font-extrabold tracking-wide mb-1 text-pallete-1 uppercase lg:text-5xl">Lorem ipsum<br>dolor sit</h1>
+                                <p class="text-sm lg:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="flex flex-col justify-center items-center gap-2 w-full md:flex-row md:gap-4">
+                                <Button href="#projects" variant='primary' class='w-full'>
+                                    Explore
+                                </Button>
+                                <Button href="#contact" variant='secondary' class='w-full'>
+                                    Contact
+                                </Button>
+                            </div>
+                        </div>
+                    </Card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

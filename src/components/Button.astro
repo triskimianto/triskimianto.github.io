@@ -1,0 +1,58 @@
+---
+interface Props {
+    href?: string;
+    type?: 'button' | 'submit' | 'reset';
+    variant?: 'primary' | 'secondary';
+    iconOnly?: boolean;
+    class?: string;
+    disabled?: boolean;
+    target?: '_blank' | '_self' | '_parent' | '_top';
+    rel?: string;
+    ariaLabel?: string;
+}
+
+const {
+    href,
+    type = 'button',
+    variant = 'primary',
+    iconOnly = false,
+    class: className,
+    disabled = false,
+    target,
+    rel,
+    ariaLabel,
+} = Astro.props;
+
+const classes = [
+    'button',
+    `button--${variant}`,
+    iconOnly && 'button--icon-only',
+    className,
+].filter(Boolean).join(' ');
+
+const linkDisabled = Boolean(href) && disabled;
+const buttonDisabled = !href && disabled;
+---
+
+{href ? (
+    <a
+        href={disabled ? undefined : href}
+        class={classes}
+        target={target}
+        rel={rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)}
+        aria-disabled={disabled ? 'true' : undefined}
+        tabindex={linkDisabled ? -1 : undefined}
+        aria-label={iconOnly ? ariaLabel : undefined}
+    >
+        <slot />
+    </a>
+) : (
+    <button
+        type={type}
+        class={classes}
+        disabled={buttonDisabled}
+        aria-label={iconOnly ? ariaLabel : undefined}
+    >
+        <slot />
+    </button>
+)}
