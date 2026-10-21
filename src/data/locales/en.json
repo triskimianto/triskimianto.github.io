@@ -1,0 +1,20 @@
+{
+    "hero": {
+        "subheading": "Building Clean Web",
+        "heading": {
+            "before": "Hi, I'm a",
+            "highlight": "\nFrontend\nDeveloper"
+        },
+        "description": "Focus on creating a clean, lightweight, and user-friendly website.",
+        "cta": {
+            "primary": {
+                "label": "Explore Projects",
+                "link": "#projects"
+            },
+            "secondary": {
+                "label": "Contact Me",
+                "link": "#contact"
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@
 import TrLogo from '../assets/tr-logo-26.svg';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
+import content from '../data/locales/en.json';
 ---
 
 <section id="hero" class="lg:scroll-mt-24">
@@ -18,17 +19,20 @@ import Button from '../components/Button.astro';
                 <div class="w-full md:h-full md:w-2/3">
                     <Card color='hero2'>
                         <div class="flex flex-col justify-between items-start gap-5 md:h-full">
-                            <h2 class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                            <h2 class="text-sm">{content.hero.subheading}</h2>
                             <div>
-                                <h1 class="text-4xl font-extrabold tracking-wide mb-1 text-pallete-1 uppercase lg:text-5xl">Lorem ipsum<br>dolor sit</h1>
-                                <p class="text-sm lg:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                <h1 class="text-4xl font-extrabold tracking-wide mb-1 text-pallete-1 uppercase whitespace-pre-line lg:text-5xl">
+                                    {content.hero.heading.before}                                
+                                    <span class="text-pallete-2">{content.hero.heading.highlight}</span>
+                                </h1>
+                                <p class="text-sm lg:text-lg">{content.hero.description}</p>
                             </div>
                             <div class="flex flex-col justify-center items-center gap-2 w-full md:flex-row md:gap-4">
-                                <Button href="#projects" variant='primary' class='w-full'>
-                                    Explore
+                                <Button href={content.hero.cta.primary.link} variant='primary' class='w-full'>
+                                    {content.hero.cta.primary.label}
                                 </Button>
-                                <Button href="#contact" variant='secondary' class='w-full'>
-                                    Contact
+                                <Button href={content.hero.cta.secondary.link} variant='secondary' class='w-full'>
+                                    {content.hero.cta.secondary.label}
                                 </Button>
                             </div>
                         </div>
