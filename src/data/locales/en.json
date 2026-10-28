@@ -1,11 +1,11 @@
 {
     "hero": {
-        "subheading": "Building Clean Web",
+        "subheading": "Building for the Web",
         "heading": {
-            "before": "Hi, I'm a",
-            "highlight": "\nFrontend\nDeveloper"
+            "before": "Hi, I'm",
+            "highlight": "\nTito\nRiskimianto"
         },
-        "description": "Focus on creating a clean, lightweight, and user-friendly website.",
+        "description": "I build clean, lightweight, and user-friendly websites.",
         "cta": {
             "primary": {
                 "label": "Explore Projects",
@@ -16,6 +16,27 @@
                 "link": "#contact"
             }
         }
+    },
+    "about": {
+        "heading": "About Me",
+        "description": "I’m a front-end developer who enjoys building and refining websites. Most of my work involves WordPress, BigCommerce and Shopify, with a focus on turning designs into responsive and functional user interfaces.\nOutside of my day-to-day work, I use Nuxt and Tailwind CSS to explore different approaches to frontend development."
+    },
+    "tech_stack": {
+        "heading": "Tech Stack",
+        "work": {
+            "heading": "Professional Experience"
+        },
+        "personal": {
+            "heading": "Personal Development"
+        }
+    },
+    "career_edu": {
+        "heading": "Career & Education",
+        "description": "A look at my professional experience and education background."
+    },
+    "project": {
+        "heading": "Selected Projects",
+        "description": "A collection of personal projects I've built while learning, experimenting, and exploring new ideas."
     },
     "contact": {
         "heading": "Contact",

@@ -1,14 +1,19 @@
 ---
-import { Picture } from "astro:assets";
-import DefaultImg from "../assets/default.webp";
-import Button from "./Button.astro";
+import { Picture } from 'astro:assets';
+import DefaultImg from '../assets/default.webp';
+import Button from './Button.astro';
+import content from '../data/locales/en.json';
 ---
 
 <section id="projects" class="lg:scroll-mt-24">
     <div class="bg-pallete-5 text-pallete-1/75">
         <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:py-30">
-            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">Projects</h2>
-            <p class="mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">
+                {content.project.heading}
+            </h2>
+            <p class="mt-5">
+                {content.project.description}
+            </p>
         </div>
         <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">
             <div class="flex flex-1 relative w-full md:w-1/2">
