@@ -1,50 +1,31 @@
 ---
-import { 
-  IconHome, 
-  IconUser, 
-  IconBriefcase2, 
-  IconMail 
-} from '@tabler/icons-astro';
+import * as Icons from '@tabler/icons-astro';
+import navItems from '../data/nav.json';
 
-const navItems = [
-    {
-        name: 'Home',
-        href: '#hero',
-        icon: IconHome
-    },
-    {
-        name: 'About',
-        href: '#about',
-        icon: IconUser
-    },
-    {
-        name: 'Projects',
-        href: '#projects',
-        icon: IconBriefcase2
-    },
-    {
-        name: 'Contact',
-        href: '#contact',
-        icon: IconMail
-    },
-]
+const iconMap: Record<string, any> = {};
+for (const [key, value] of Object.entries(Icons)) {
+    iconMap[key] = value;
+}
 ---
 
 <nav>
     <ul class="flex items-center justify-between lg:justify-center lg:gap-10 text-xs sm:text-sm font-medium uppercase">
-        {navItems.map(({ name, href, icon: IconComponent }) => (
-            <li>
-                <a 
-                    href={href}
-                    class="nav-link flex flex-col lg:flex-row items-center gap-1 text-pallete-1/75 hover:text-pallete-1 transition-colors py-1 px-4 rounded-full"
-                >
-                    <IconComponent class="w-5 h-5 lg:hidden stroke-[1.8]" />
-                    <span>
-                        {name}
-                    </span>
-                </a>
-            </li>
-        ))}
+        {navItems.map(({ name, href, icon: iconKey }) => {
+            const IconComponent = iconMap[iconKey];
+            return (
+                <li>
+                    <a 
+                        href={href}
+                        class="nav-link flex flex-col lg:flex-row items-center gap-1 text-pallete-1/75 hover:text-pallete-1 transition-colors py-1 px-4 rounded-full"
+                    >
+                        <IconComponent class="w-5 h-5 lg:hidden stroke-[1.8]" />
+                        <span>
+                            {name}
+                        </span>
+                    </a>
+                </li>
+            );
+        })}
     </ul>
 </nav>
 

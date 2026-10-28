@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Home",
+        "href": "#hero",
+        "icon": "IconHome"
+    },
+    {
+        "name": "About",
+        "href": "#about",
+        "icon": "IconUser"
+    },
+    {
+        "name": "Projects",
+        "href": "#projects",
+        "icon": "IconBriefcase2"
+    },
+    {
+        "name": "Contact",
+        "href": "#contact",
+        "icon": "IconMail"
+    }
+]

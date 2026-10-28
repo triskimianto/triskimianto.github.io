@@ -16,5 +16,17 @@
                 "link": "#contact"
             }
         }
+    },
+    "contact": {
+        "heading": "Contact",
+        "description": "Have a project in mind or just want to connect? Feel free to drop me an email.",
+        "cta": {
+            "label": "Email",
+            "link": "mailto:riskimianto@gmail.com"
+        }
+    },
+    "social": {
+        "heading": "Around the web",
+        "description": "A few other places where you can find me."
     }
 }
