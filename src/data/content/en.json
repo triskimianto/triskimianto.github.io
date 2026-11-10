@@ -1,0 +1,33 @@
+{
+    "tech_stack": {
+        "work": [
+            "WordPress",
+            "Shopify",
+            "Bigcommerce"
+        ],
+        "personal": [
+            "Nuxt",
+            "React",
+            "Astro",
+            "Tailwind CSS"
+        ]
+    },
+    "contact_cta": {
+        "label": "Email",
+        "link": "mailto:riskimianto@gmail.com"
+    },
+    "socials": [
+        {
+            "label": "LinkedIn",
+            "link": "https://id.linkedin.com/in/tito-riskimianto-3b621a220"
+        },
+        {
+            "label": "Github",
+            "link": "https://github.com/triskimianto"
+        },
+        {
+            "label": "Instagram",
+            "link": "https://www.instagram.com/riskimianto"
+        }
+    ]
+}

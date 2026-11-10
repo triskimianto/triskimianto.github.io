@@ -1,25 +1,25 @@
 ---
 import Button from './Button.astro';
 import Link from '../components/Link.astro';
-import content from '../data/locales/en.json';
-import socials from '../data/socials.json';
+import ui from '../data/ui/en.json';
+import content from '../data/content/en.json';
 ---
 
 <section id="contact" class="lg:scroll-mt-24">
     <div class="bg-pallete-5 text-pallete-1/75">
         <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:pt-30">
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase text-center">
-                {content.contact.heading}
+                {ui.contact.heading}
             </h2>
             <div class="text-center mt-5">
                 <p class="text-sm lg:text-lg mb-10">
-                    {content.contact.description}
+                    {ui.contact.description}
                 </p>
                 <Button
-                    href={content.contact.cta.link}
+                    href={content.contact_cta.link}
                     variant='primary'
                 >
-                    {content.contact.cta.label}
+                    {content.contact_cta.label}
                 </Button>
             </div>
         </div>
@@ -27,14 +27,14 @@ import socials from '../data/socials.json';
     <div class="bg-pallete-5 text-pallete-1/75">
         <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:pb-30">
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">
-                {content.social.heading}
+                {ui.social.heading}
             </h2>
             <p class="text-sm lg:text-lg mt-5 mb-10">
-                    {content.social.description}
-                </p>
+                    {ui.social.description}
+            </p>
             <div class="flex flex-col gap-3 mt-5">
-                {socials.map((social) => (
-                    <Link href={social.link}>
+                {content.socials.map((social) => (
+                    <Link href={social.link} target='_blank'>
                         {social.label}
                     </Link>
                 ))}

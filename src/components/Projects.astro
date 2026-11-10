@@ -2,17 +2,17 @@
 import { Picture } from 'astro:assets';
 import DefaultImg from '../assets/default.webp';
 import Button from './Button.astro';
-import content from '../data/locales/en.json';
+import ui from '../data/ui/en.json';
 ---
 
 <section id="projects" class="lg:scroll-mt-24">
     <div class="bg-pallete-5 text-pallete-1/75">
         <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:py-30">
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">
-                {content.project.heading}
+                {ui.project.heading}
             </h2>
             <p class="mt-5">
-                {content.project.description}
+                {ui.project.description}
             </p>
         </div>
         <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">

@@ -1,9 +1,31 @@
 {
+    "nav": [
+        {
+            "name": "Home",
+            "href": "#hero",
+            "icon": "IconHome"
+        },
+        {
+            "name": "About",
+            "href": "#about",
+            "icon": "IconUser"
+        },
+        {
+            "name": "Projects",
+            "href": "#projects",
+            "icon": "IconBriefcase2"
+        },
+        {
+            "name": "Contact",
+            "href": "#contact",
+            "icon": "IconMail"
+        }
+    ],
     "hero": {
         "subheading": "Building for the Web",
         "heading": {
             "before": "Hi, I'm",
-            "highlight": "\nTito\nRiskimianto"
+            "highlight": "\nTito Riskimianto"
         },
         "description": "I build clean, lightweight, and user-friendly websites.",
         "cta": {
@@ -40,11 +62,7 @@
     },
     "contact": {
         "heading": "Contact",
-        "description": "Have a project in mind or just want to connect? Feel free to drop me an email.",
-        "cta": {
-            "label": "Email",
-            "link": "mailto:riskimianto@gmail.com"
-        }
+        "description": "Have a project in mind or just want to connect? Feel free to drop me an email"
     },
     "social": {
         "heading": "Around the web",

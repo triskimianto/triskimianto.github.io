@@ -1,6 +1,6 @@
 ---
 import * as Icons from '@tabler/icons-astro';
-import navItems from '../data/nav.json';
+import ui from '../data/ui/en.json';
 
 const iconMap: Record<string, any> = {};
 for (const [key, value] of Object.entries(Icons)) {
@@ -10,7 +10,7 @@ for (const [key, value] of Object.entries(Icons)) {
 
 <nav>
     <ul class="flex items-center justify-between lg:justify-center lg:gap-10 text-xs sm:text-sm font-medium uppercase">
-        {navItems.map(({ name, href, icon: iconKey }) => {
+        {ui.nav.map(({ name, href, icon: iconKey }) => {
             const IconComponent = iconMap[iconKey];
             return (
                 <li>
@@ -64,6 +64,6 @@ for (const [key, value] of Object.entries(Icons)) {
         sections.forEach((section) => observer.observe(section));
     }
 
-    document.addEventListener('DOMContentLoaded', initActiveNav);
+    document.addEventListener('DOMuiLoaded', initActiveNav);
     document.addEventListener('astro:page-load', initActiveNav);
 </script>

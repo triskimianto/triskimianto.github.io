@@ -1,34 +1,50 @@
 ---
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
-import content from '../data/locales/en.json';
+import ui from '../data/ui/en.json';
+import content from '../data/content/en.json';
 ---
 
 <section id="about" class="lg:scroll-mt-24">
     <div class="bg-pallete-5 text-pallete-1/75">
         <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:py-30">
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold text-center mb-5 uppercase">
-                {content.about.heading}
+                {ui.about.heading}
             </h2>
             <p class="text-center mb-10">
-                {content.about.description}
+                {ui.about.description}
             </p>
+
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold mb-5 uppercase">
-                {content.tech_stack.heading}
+                {ui.tech_stack.heading}
             </h2>
-            <p class="mb-3">
-                {content.tech_stack.work.heading}
-            </p>
-            <p class="mb-5">Coming soon</p>
-            <p class="mb-3">
-                {content.tech_stack.personal.heading}
-            </p>
-            <p class="mb-5">Coming soon</p>
+
+            <h3 class="mb-3 text-lg font-semibold">
+                {ui.tech_stack.work.heading}
+            </h3>
+            <ul class="flex flex-wrap items-center gap-2 mb-5">
+                {content.tech_stack.work.map((tech) => (
+                    <li>
+                        <Badge>{tech}</Badge>
+                    </li>
+                ))}
+            </ul>
+
+            <h3 class="mb-3 text-lg font-semibold">
+                {ui.tech_stack.personal.heading}
+            </h3>
+            <ul class="flex flex-wrap items-center gap-2 mb-10">
+                {content.tech_stack.personal.map((tech) => (
+                    <li>
+                        <Badge color="clr2">{tech}</Badge>
+                    </li>
+                ))}
+            </ul>
+
             <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold mb-5 uppercase">
-                {content.career_edu.heading}
+                {ui.career_edu.heading}
             </h2>
             <p class="mb-5">
-                {content.career_edu.description}
+                {ui.career_edu.description}
             </p>
             <p class="mb-5">Coming soon</p>
         </div>
