@@ -1,0 +1,40 @@
+---
+import Button from './Button.astro';
+import ui from '../data/ui/en.json';
+import content from '../data/content/en.json';
+---
+
+<section id="projects" class="lg:scroll-mt-24">
+    <div class="bg-pallete-5 text-pallete-1/75">
+        <div class="container mx-auto px-5 py-10 md:px-10 md:py-20 lg:px-20 lg:py-30">
+            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold uppercase">
+                {ui.project.heading}
+            </h2>
+            <p class="mt-5">
+                {ui.project.description}
+            </p>
+        </div>
+        {content.projects.map((project) => (
+            <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">
+                <div class="flex flex-1 relative w-full md:w-1/2">
+                    <img src={project.image} alt={project.title} class="w-full h-full object-cover" />
+                </div>
+                <div class="flex flex-1 w-full md:w-1/2">
+                    <div class="flex flex-col justify-center p-5 lg:p-10">
+                        <h3 class="text-3xl lg:text-4xl text-pallete-1 font-extrabold mb-3 uppercase">{project.title}</h3>
+                        <p class="mb-3">{project.description}</p>
+                        <ul class="list-disc list-inside mb-5">
+                            {project.technologies.map((tech) => (
+                                <li>{tech}</li>
+                            ))}
+                        </ul>
+                        <div class="flex items-center gap-3">
+                            <Button href={project.links.demo} variant="primary" target="_blank">View Live</Button>
+                            <Button href={project.links.github} variant="secondary" target="_blank">View Repository</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>

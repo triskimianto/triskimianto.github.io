@@ -1,0 +1,40 @@
+---
+interface Props {
+    color?: 'hero1' | 'hero2' | 'pal1';
+}
+
+const { color = 'pal1' } = Astro.props;
+
+const colors = {
+    hero1: {
+        background: 'bg-pallete-2',
+        highlight: 'bg-linear-to-b from-pallete-6/20 via-pallete-6/5 to-transparent'
+    },
+    hero2: {
+        background: 'bg-pallete-6',
+        highlight: 'bg-linear-to-b from-pallete-4/10 via-pallete-4/5 to-transparent'
+    },
+    pal1: {
+        background: 'bg-pallete-6',
+        highlight: 'bg-radial-[at_75%_25%] from-pallete-2/20 via-pallete-2/5 to-transparent to-75%'
+    },
+}
+
+const selectedColor  = colors[color] ?? colors.pal1;
+---
+
+<div class:list={[
+    'relative overflow-hidden rounded-4xl h-full',
+    selectedColor.background,
+    'shadow-[inset_0_2px_3px_rgba(255,255,255,0.7),inset_0_-2px_4px_rgba(0,0,0,0.20),0_6px_15px_rgba(0,0,0,0.2)]',
+    'backdrop-blur-xl',
+]}>
+    <div class:list={[
+        'pointer-events-none absolute inset-x-0 top-0 h-1/2',
+        selectedColor.highlight,
+    ]}>
+    </div>
+    <div class="relative z-10 h-full p-5 md:p-10 lg:p-15">
+        <slot />
+    </div>
+</div>
