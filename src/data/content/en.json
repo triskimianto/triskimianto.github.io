@@ -12,6 +12,92 @@
             "Tailwind CSS"
         ]
     },
+    "career": [
+        {
+            "company": "PT Alphabet Indonesia",
+            "position": "Frontend Developer",
+            "type": "Full-time",
+            "period": {
+                "start": "2023",
+                "end": "Present"
+            },
+            "description": "Working on website development and maintenance, focusing on responsive interfaces and user experience.",
+            "tech": [
+                "WordPress",
+                "Bigcommerce",
+                "Shopify"
+            ]                                    
+        }
+    ],
+    "education": [
+        {
+            "institution": "Juke Solutions",
+            "program": "NuxtJS Frontend Bootcamp",
+            "type": "Bootcamp",
+            "period": {
+                "start": "May 2023",
+                "end": "June 2023"
+            },
+            "description": ""
+        },
+        {
+            "institution": "UPTD BLK Kudus",
+            "program": "Web Programming",
+            "type": "Bootcamp",
+            "period": {
+                "start": "November 2022",
+                "end": "December 2022"
+            },
+            "description": ""
+        },
+        {
+            "institution": "Professional Academy",
+            "program": "Google Data Analytics",
+            "type": "Bootcamp",
+            "period": {
+                "start": "September 2022",
+                "end": "October 2022"
+            },
+            "description": ""
+        },
+        {
+            "institution": "RevoU",
+            "program": "Intro to Data Analytics",
+            "type": "Bootcamp",
+            "period": {
+                "start": "June 2022",
+                "end": "July 2022"
+            },
+            "description": ""
+        },
+        {
+            "institution": "Universitas Dian Nuswantoro",
+            "degree": "Bachelor's Degree",
+            "field": "Informatics",
+            "type": "University",
+            "period": {
+                "start": "2017",
+                "end": "2021"
+            },
+            "description": ""
+        }
+    ],
+    "projects": [
+        {
+            "title": "Cooking Recipes Website",
+            "description": "A cooking recipes website built with Nuxt 3 and Tailwind CSS.",
+            "image": "/cooking-recipes.png",
+            "category": "Personal Project",
+            "technologies": [
+                "Nuxt 3",
+                "Tailwind CSS"
+            ],
+            "links": {
+                "demo": "https://resonant-toffee-ca88a5.netlify.app/",
+                "github": "https://github.com/triskimianto/nuxt3-tailwind"
+            }
+        }
+    ],
     "contact_cta": {
         "label": "Email",
         "link": "mailto:riskimianto@gmail.com"

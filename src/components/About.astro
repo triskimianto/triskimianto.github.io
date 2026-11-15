@@ -1,5 +1,6 @@
 ---
 import Badge from '../components/Badge.astro';
+import Card from '../components/Card.astro';
 import ui from '../data/ui/en.json';
 import content from '../data/content/en.json';
 ---
@@ -40,13 +41,90 @@ import content from '../data/content/en.json';
                 ))}
             </ul>
 
-            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold mb-5 uppercase">
+            <h2 class="text-5xl lg:text-7xl text-pallete-1 font-extrabold mb-5 uppercase text-center">
                 {ui.career_edu.heading}
             </h2>
-            <p class="mb-5">
+            <p class="text-center mb-10">
                 {ui.career_edu.description}
             </p>
-            <p class="mb-5">Coming soon</p>
+            <div class="md:max-w-150 mx-auto">
+                <ul class="flex flex-col gap-5">
+                    {content.career.map((career) => (
+                        <li>
+                            <Card>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-xl lg:text-2xl text-pallete-1 font-extrabold uppercase">{career.company}</h3>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        {career.position ? (
+                                            <span>{career.position}</span>
+                                        ) : null}
+                                        {career.type ? ( 
+                                            <span>&bull;</span>                                                           
+                                            <span>{career.type}</span>
+                                        ) : null}
+                                    </div>
+                                    <div>
+                                        <span>                                            
+                                            {career.period ? (
+                                                <span>{career.period.start} - {career.period.end}</span>
+                                            ) : null}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    {career.description ? (
+                                        <p class="text-pallete-1 mt-5">{career.description}</p>
+                                    ) : null}
+                                    <div class="flex flex-wrap items-center gap-1">
+                                        {career.tech ? (
+                                            career.tech.map((t) => (
+                                                <Badge>{t}</Badge>
+                                            ))
+                                        ) : null}
+                                    </div>
+                                </div>
+                            </Card>
+                        </li>
+                    ))}
+                    {content.education.map((education) => (
+                        <li>
+                            <Card>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-xl lg:text-2xl text-pallete-1 font-extrabold uppercase">{education.institution}</h3>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        {education.degree ? (
+                                            <span>{education.degree}</span>
+                                        ) : null}
+                                        {education.program ? ( 
+                                            <span>{education.program}</span>
+                                        ) : null}
+                                        {education.field ? (                                                            
+                                            <span>&bull;</span>
+                                            <span>{education.field}</span>
+                                        ) : null}                                        
+                                        {education.type !== "University" ? (                                                            
+                                            <span>&bull;</span>
+                                            <span>Training</span>
+                                        ) : null}
+                                    </div>
+                                    <div>
+                                        <span>                                            
+                                            {education.period ? (
+                                                <span>{education.period.start} - {education.period.end}</span>
+                                            ) : null}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    {education.description ? (
+                                        <p class="text-pallete-1 mt-5">{education.description}</p>
+                                    ) : null}                                    
+                                </div>
+                            </Card>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     </div>
 </section>

@@ -1,8 +1,7 @@
 ---
-import { Picture } from 'astro:assets';
-import DefaultImg from '../assets/default.webp';
 import Button from './Button.astro';
 import ui from '../data/ui/en.json';
+import content from '../data/content/en.json';
 ---
 
 <section id="projects" class="lg:scroll-mt-24">
@@ -15,27 +14,27 @@ import ui from '../data/ui/en.json';
                 {ui.project.description}
             </p>
         </div>
-        <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">
-            <div class="flex flex-1 relative w-full md:w-1/2">
-                <Picture src={DefaultImg} alt={'tr'} sizes={'50vw'} class="w-full h-full object-cover" />
-            </div>
-            <div class="flex flex-1 w-full md:w-1/2">
-                <div class="p-5 lg:p-10">
-                    <h3 class="text-3xl lg:text-4xl text-pallete-1 font-extrabold mb-3 uppercase">Heading</h3>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <ul class="list-disc list-inside mb-5">
-                        <li>List 1</li>
-                        <li>List 2</li>
-                        <li>List 3</li>
-                        <li>List 4</li>
-                        <li>List 5</li>
-                    </ul>
-                    <div class="flex items-center gap-3">
-                        <Button href="#" variant="primary">View Live</Button>
-                        <Button href="#" variant="secondary">View Repository</Button>
+        {content.projects.map((project) => (
+            <div class="flex flex-1 flex-col justify-between items-stretch md:flex-row">
+                <div class="flex flex-1 relative w-full md:w-1/2">
+                    <img src={project.image} alt={project.title} class="w-full h-full object-cover" />
+                </div>
+                <div class="flex flex-1 w-full md:w-1/2">
+                    <div class="flex flex-col justify-center p-5 lg:p-10">
+                        <h3 class="text-3xl lg:text-4xl text-pallete-1 font-extrabold mb-3 uppercase">{project.title}</h3>
+                        <p class="mb-3">{project.description}</p>
+                        <ul class="list-disc list-inside mb-5">
+                            {project.technologies.map((tech) => (
+                                <li>{tech}</li>
+                            ))}
+                        </ul>
+                        <div class="flex items-center gap-3">
+                            <Button href={project.links.demo} variant="primary">View Live</Button>
+                            <Button href={project.links.github} variant="secondary">View Repository</Button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        ))}
     </div>
 </section>
